@@ -16,7 +16,7 @@ pipeline {
         stage('build to images') {
             steps {
             script{
-                sh "docker build -t santhosh9405/webapplication1 ."
+                sh "docker build -t santhosh9405/new-image ."
             }
             }
         }
@@ -24,7 +24,7 @@ pipeline {
             steps {
             script{
                withDockerRegistry(credentialsId: 'cred-3', url: 'https://index.docker.io/v1/') {
-                sh 'docker push santhosh9405/webapplication1'
+                sh 'docker push santhosh9405/new-image'
             }
             }
             }
